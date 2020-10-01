@@ -9,6 +9,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 
 export default ()=>{
 
+    const [location, setLocation] = useState('')
     const [category, setCategory] = useState('')
     const [open, setOpen] = useState(false)
 
@@ -37,6 +38,7 @@ export default ()=>{
 
     return(
      <div className={classes.container}>
+     <h2>Tambah Produk</h2>
       <form>
       <div className={classes.inputGroup}>
        <TextField id="outlined-basic" label="Nama Produk" variant="outlined" className={classes.input} />
@@ -58,14 +60,31 @@ export default ()=>{
        </TextField>
       </div>      
       <div className={classes.inputGroup}>
-       <TextField id="outlined-basic" label="Harga" variant="outlined" className={classes.input} />
-      </div>       
-      <div className={classes.inputGroup}>
        <TextField id="outlined-basic" label="Stok" variant="outlined" className={classes.input} />
       </div>
       <div className={classes.inputGroup}>
        <TextField id="outlined-basic" label="Deskripsi Produk" variant="outlined" className={classes.input} />
       </div>
+      <div className={classes.inputGroup}>
+       <TextField 
+        value={location} 
+        onChange={e=>setLocation(e.target.value)}
+        select 
+        id="outlined-basic" 
+        label="Kota" 
+        variant="outlined" 
+        className={classes.input}>
+        <MenuItem value="Elektronik">Jakarta</MenuItem>
+        <MenuItem value="Komputer dan aksesoris">Bandung</MenuItem>
+       </TextField>
+      </div>  
+      <div className={classes.inputGroup}>
+       <TextField id="outlined-basic" label="Alamat lengkap" variant="outlined" className={classes.input} />
+      </div> 
+      <div className={classes.inputGroup}>
+       <h3>Foto</h3>
+       <input type="file" />
+      </div>    
       </form>
       <Button onClick={handleClickOpen} variant="contained" color="primary">Simpan</Button>
       <Dialog

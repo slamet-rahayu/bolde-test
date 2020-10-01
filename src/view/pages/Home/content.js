@@ -46,9 +46,6 @@ export default ()=>{
                     <Typography variant="body2" color="textSecondary" component="p">
                      RP. {k.price}
                     </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                     {k.description}
-                    </Typography>
                   </CardContent>
                   </CardActionArea>
                 </Card>

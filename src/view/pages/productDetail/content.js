@@ -15,7 +15,7 @@ export default ()=>{
         },
         card:{
          maxWidth: 500,
-         maxHeight: 500
+         maxHeight: 500,
         },
         rightGrid:{
          paddingLeft:"60px",
@@ -26,6 +26,11 @@ export default ()=>{
         img:{
          width:"100%",
          height:"100%"
+        },
+        rightGridItem:{
+          maxWidth:"500px",
+          maxHeight:"440px",
+          overflow:"auto"
         }
     })
 
@@ -40,9 +45,11 @@ export default ()=>{
            </Card>
           </Grid>
           <Grid item lg={7} className={classes.rightGrid}>
-          <div style={{maxWidth:"500px",maxHeight:"440px"}}>
+          <div className={classes.rightGridItem}>
               <h1>{Product.category[Cat].product[Prod].name}</h1>
               <h4>Rp. {Product.category[Cat].product[Prod].price}</h4>
+              <h4>Stok {Product.category[Cat].product[Prod].stock}</h4>
+              <h4>Lokasi {Product.category[Cat].product[Prod].location}</h4>
               <h6>{Product.category[Cat].product[Prod].description}</h6>
             </div>
             <div style={{marginBottom:"10px"}}>
